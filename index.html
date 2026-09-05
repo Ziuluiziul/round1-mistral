@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mistral Round1 — PIX por valor (tag54)</title>
+  <style>
+    :root { --bg:#0f1419; --card:#1a2332; --text:#e7ecf3; --muted:#9aa8bc; --accent:#ff7000; --border:#2a3548; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family:system-ui,sans-serif; background:var(--bg); color:var(--text); line-height:1.45; padding:1.5rem 1rem 3rem; }
+    main { max-width:900px; margin:0 auto; }
+    h1 { font-size:1.35rem; margin:0 0 .25rem; }
+    .sub { color:var(--muted); margin:0 0 1.25rem; font-size:.95rem; }
+    .card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.2rem; margin-bottom:1rem; }
+    h2 { font-size:1.05rem; margin:0 0 .75rem; }
+    ul.offers { list-style:none; padding:0; margin:0; }
+    ul.offers li { display:flex; justify-content:space-between; gap:1rem; padding:.5rem 0; border-bottom:1px solid var(--border); }
+    ul.offers li:last-child { border-bottom:none; }
+    .price { color:var(--accent); font-weight:600; }
+    .pix-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:1rem; }
+    .pix-card { background:#0c1017; border:1px solid var(--border); border-radius:10px; padding:.85rem; display:flex; flex-direction:column; gap:.5rem; }
+    .pix-card h3 { margin:0; font-size:1rem; text-align:center; color:var(--accent); }
+    .pix-card img { width:min(200px,100%); height:auto; margin:0 auto; border-radius:6px; background:#fff; }
+    .pix-card textarea { width:100%; font-family:ui-monospace,Menlo,Consolas,monospace; font-size:.62rem; background:#111827; color:#c8d4e4; border:1px solid var(--border); border-radius:6px; padding:.45rem; }
+    .pix-card button { background:var(--accent); color:#1a0a00; border:none; border-radius:8px; padding:.55rem .75rem; font-weight:650; cursor:pointer; }
+    .note { color:var(--muted); font-size:.88rem; margin:.5rem 0 0; }
+    a { color:#ff9a4d; }
+    footer { margin-top:1rem; color:var(--muted); font-size:.85rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Mistral · free-tier — PIX por valor (tag54)</h1>
+    <p class="sub">Recebedor <strong>LUIZ</strong> · chat / código / copy EU · Hub <a href="https://ziuluiziul.github.io/round1-cumulunimbus/">multi-IA</a></p>
+
+    <section class="card">
+      <h2>Ofertas</h2>
+      <ul class="offers">
+        <li><span>Kit mini (guia free)</span><span class="price">R$ 20</span></li>
+        <li><span>Kit Free / pack copy EU</span><span class="price">R$ 50</span></li>
+        <li><span>Pack código / brief</span><span class="price">R$ 100</span></li>
+      </ul>
+      <p class="note">Escopo combinado antes. Free allow only — sem PAYG. Gist: <a href="https://gist.github.com/Ziuluiziul/108c9a97622dc0f3f236c3aa19d2940c">oferta</a></p>
+    </section>
+
+    <section class="card">
+      <h2>PIX (payload = tag54 do QR)</h2>
+      <div class="pix-grid">
+        <div class="pix-card">
+          <h3>R$ 20 · pix-r20</h3>
+          <img src="pix/qr-r20.png" alt="PIX R$20" width="200" height="200" />
+          <textarea id="p20" readonly rows="4">00020126330014br.gov.bcb.pix011108030362994520400005303986540520.005802BR5920LUIZ GUSTAVO CORREIA6009SAO PAULO62100506padrao63043835</textarea>
+          <button type="button" onclick="copy('p20')">Copiar PIX</button>
+        </div>
+        <div class="pix-card">
+          <h3>R$ 50 · qr_2</h3>
+          <img src="pix/qr-r50.png" alt="PIX R$50" width="200" height="200" />
+          <textarea id="p50" readonly rows="4">00020126330014br.gov.bcb.pix011108030362994520400005303986540550.005802BR5920LUIZ GUSTAVO CORREIA6009SAO PAULO62080504Pack63044E58</textarea>
+          <button type="button" onclick="copy('p50')">Copiar PIX</button>
+        </div>
+        <div class="pix-card">
+          <h3>R$ 100 · qr_0</h3>
+          <img src="pix/qr-r100.png" alt="PIX R$100" width="200" height="200" />
+          <textarea id="p100" readonly rows="4">00020126330014br.gov.bcb.pix0111080303629945204000053039865406100.005802BR5920LUIZ GUSTAVO CORREIA6009SAO PAULO62090505Apoio6304C160</textarea>
+          <button type="button" onclick="copy('p100')">Copiar PIX</button>
+        </div>
+        <div class="pix-card">
+          <h3>R$ 100 alt · qr_3</h3>
+          <img src="pix/qr-r100-alt.png" alt="PIX R$100 alt" width="200" height="200" />
+          <textarea id="p100a" readonly rows="4">00020126330014br.gov.bcb.pix0111080303629945204000053039865406100.005802BR5920LUIZ GUSTAVO CORREIA6009SAO PAULO62120508Apoio1006304C205</textarea>
+          <button type="button" onclick="copy('p100a')">Copiar PIX</button>
+        </div>
+      </div>
+      <p class="note">Índice de ficheiro pode mentir — valor = tag 54 do payload embutido.</p>
+    </section>
+
+    <footer>ROUND1 Mistral · USD/outras → Binance (Luiz) · sem cold-DM</footer>
+  </main>
+  <script>
+    function copy(id) {
+      const el = document.getElementById(id);
+      navigator.clipboard.writeText(el.value).then(() => alert('PIX copiado'));
+    }
+  </script>
+</body>
+</html>
